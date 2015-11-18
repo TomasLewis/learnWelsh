@@ -21,7 +21,18 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" id="testViewport" content="user-scalable=no" />
+<script>
+var screenWidth=window.innerWidth,screenHeight=window.innerHeight,ratio=screenHeight/screenWidth,nvp,
+mvp = document.getElementById('testViewport');
+if (ratio<0.7000){
+   nvp=Math.ceil(screenWidth*(550/screenHeight)); 
+} else {
+    //ipad
+    nvp=Math.ceil(screenWidth*0.79);
+}
+mvp.setAttribute('content','user-scalable=no, width='+nvp);
+</script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Learn Welsh</title>
     </head>
